@@ -1,0 +1,101 @@
+@import 'utils/config', 'utils/utils', 'utils/button';
+
+body {
+   background-color: darkblue;
+}
+
+.calculator-container {
+   background-color: blue;
+   border: 2px solid white;
+   border-radius: 15px;
+   margin: 15% auto;
+   padding: 3% 5%;
+
+   width: 90%;
+
+   #calculator-form {
+	  &-fieldset {
+		 padding: 0 2rem 3.75rem 2rem;
+		 #main-heading {
+			font-size: 1.85rem;
+			text-align: center;
+			margin: 10px 0 20px 0;
+			color: white;
+
+			text-decoration: underline;
+		 }
+
+		 output {
+			font-size: 1.25rem;
+			&::before {
+			   content: 'Total Check > $';
+
+			   font-size: inherit;
+			}
+		 }
+
+		 label {
+			font-size: 1.15rem;
+		 }
+		 .dollar-sign::before {
+			content: '$';
+			font-size: 1.05rem;
+		 }
+		 .percentage-sign::after {
+			content: '%';
+			font-size: 1.05rem;
+		 }
+
+		 input[type=text] {
+			background-color: transparent;
+			outline: none;
+			outline-style: none;
+			border: none;
+			border-bottom: 1px solid black;
+			font-size: 1.05rem;
+			padding: 0.25rem 0.5rem;
+
+			margin-left: 2rem;
+			width: 50%;
+
+			&::placeholder {
+			   font-style: italic;
+			   opacity: 0.6;
+			   font-size: 1.05rem;
+			}
+
+			&:focus {
+			   width: 60%;
+			   margin-left: 0;
+			}
+
+			&:invalid {
+			   border-color: red;
+			   color: red;
+
+			}
+			&:invalid ~ .error-message {
+			   display: block;
+			}
+		 }
+		 .error-message {
+			display: none;
+			color: red;
+			margin: 10px;
+			font-style: italic;
+		 }
+
+		 hr {
+			margin: 1.25rem 2rem 2rem 2rem;
+		 }
+	  }
+	  #btn-group {
+		 position: absolute; 
+		 left: 50%;
+		 transform: translate(-50%, -10px);
+		 .btn {
+			@include button(0.85rem, 1rem, 1rem);
+		 }
+	  }
+   }
+} 

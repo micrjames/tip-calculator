@@ -1,0 +1,100 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: darkblue;
+}
+
+.calculator-container {
+  background-color: blue;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 3% 5%;
+  width: 90%;
+}
+.calculator-container #calculator-form-fieldset {
+  padding: 0 2rem 3.75rem 2rem;
+}
+.calculator-container #calculator-form-fieldset #main-heading {
+  font-size: 1.85rem;
+  text-align: center;
+  margin: 10px 0 20px 0;
+  color: white;
+  text-decoration: underline;
+}
+.calculator-container #calculator-form-fieldset output {
+  font-size: 1.25rem;
+}
+.calculator-container #calculator-form-fieldset output::before {
+  content: "Total Check > $";
+  font-size: inherit;
+}
+.calculator-container #calculator-form-fieldset label {
+  font-size: 1.15rem;
+}
+.calculator-container #calculator-form-fieldset .dollar-sign::before {
+  content: "$";
+  font-size: 1.05rem;
+}
+.calculator-container #calculator-form-fieldset .percentage-sign::after {
+  content: "%";
+  font-size: 1.05rem;
+}
+.calculator-container #calculator-form-fieldset input[type=text] {
+  background-color: transparent;
+  outline: none;
+  outline-style: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1.05rem;
+  padding: 0.25rem 0.5rem;
+  margin-left: 2rem;
+  width: 50%;
+}
+.calculator-container #calculator-form-fieldset input[type=text]::placeholder {
+  font-style: italic;
+  opacity: 0.6;
+  font-size: 1.05rem;
+}
+.calculator-container #calculator-form-fieldset input[type=text]:focus {
+  width: 60%;
+  margin-left: 0;
+}
+.calculator-container #calculator-form-fieldset input[type=text]:invalid {
+  border-color: red;
+  color: red;
+}
+.calculator-container #calculator-form-fieldset input[type=text]:invalid ~ .error-message {
+  display: block;
+}
+.calculator-container #calculator-form-fieldset .error-message {
+  display: none;
+  color: red;
+  margin: 10px;
+  font-style: italic;
+}
+.calculator-container #calculator-form-fieldset hr {
+  margin: 1.25rem 2rem 2rem 2rem;
+}
+.calculator-container #calculator-form #btn-group {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -10px);
+}
+.calculator-container #calculator-form #btn-group .btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
